@@ -13,3 +13,21 @@ Esempio di utilizzo:
     throttledLog(); // ❌ Ignorato (chiamato troppo presto)
     setTimeout(throttledLog, 2500); // ✅ "Eseguito!" (dopo 2.5 secondi)
 */
+
+function creaThrottler(funct, msLimit) {
+  let functCanWork = true;
+  return function () {
+    if (!functCanWork) {
+      return;
+    }
+    funct();
+    functCanWork = false;
+    setTimeout(() => (functCanWork = true), msLimit);
+  };
+}
+
+const throttledLog = creaThrottler(() => console.log("Eseguito!"), 2000);
+
+throttledLog();
+throttledLog();
+setTimeout(throttledLog, 2500);
