@@ -9,8 +9,8 @@ function creaTimer(ms) {
   return setTimeout(() => console.log(`Tempo scaduto: ${ms}ms`), ms);
 }
 
-console.log(creaTimer(1000));
-console.log(creaTimer(3000));
-console.log(creaTimer(5000));
-console.log(creaTimer(7000));
-console.log(creaTimer(9000));
+creaTimer(1000);
+creaTimer(3000);
+creaTimer(5000);
+creaTimer(7000);
+creaTimer(9000);

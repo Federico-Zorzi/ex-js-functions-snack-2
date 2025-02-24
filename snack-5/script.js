@@ -15,5 +15,5 @@ function stampaOgniSecondo(mex, ms) {
   }, ms);
 }
 
-console.log(stampaOgniSecondo("Stampa 1 secondo", 1000));
-console.log(stampaOgniSecondo("Stampa 5 secondi", 5000));
+stampaOgniSecondo("Stampa 1 secondo", 1000);
+stampaOgniSecondo("Stampa 5 secondi", 5000);
