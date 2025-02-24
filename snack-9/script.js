@@ -18,3 +18,25 @@ Output atteso:
     Operazione 2
     Operazione 3
 */
+
+function sequenzaOperazioni(operationsArray, ms) {
+  let index = 0;
+  const i = setInterval(() => {
+    operationsArray[index]();
+    if (index === operationsArray.length - 1) {
+      console.log("Operazioni finite ");
+      clearInterval(i);
+    } else {
+      index++;
+    }
+  }, ms);
+}
+
+sequenzaOperazioni(
+  [
+    () => console.log("Operazione 1"),
+    () => console.log("Operazione 2"),
+    () => console.log("Operazione 3"),
+  ],
+  2000
+);
