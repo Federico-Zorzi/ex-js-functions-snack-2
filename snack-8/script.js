@@ -15,3 +15,18 @@ Output atteso:
     1
     Tempo scaduto!
 */
+
+function contoAllaRovescia(num) {
+  let count = num;
+
+  const i = setInterval(() => {
+    console.log("count: ", count);
+    if (count === 0) {
+      console.log("Tempo scaduto!");
+      clearInterval(i);
+    }
+    count--;
+  }, 1000);
+}
+
+contoAllaRovescia(9);
