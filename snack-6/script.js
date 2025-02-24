@@ -7,11 +7,16 @@ Crea un contatore automatico con setInterval
 
 function creaContatoreAutomatico(ms) {
   let count = 0;
-  return setInterval(() => {
-    count++;
-    console.log(`Incrementa ogni ${ms}ms: ${count}`);
-  }, ms);
+  return () => {
+    setInterval(() => {
+      count++;
+      console.log(`Incrementa ogni ${ms}ms: ${count}`);
+    }, ms);
+  };
 }
 
-creaContatoreAutomatico(1000);
-creaContatoreAutomatico(3000);
+const countEvery1Second = creaContatoreAutomatico(1000);
+const countEvery3Second = creaContatoreAutomatico(3000);
+
+countEvery1Second();
+countEvery3Second();

@@ -6,11 +6,12 @@ Crea un generatore di funzioni creaTimer
 */
 
 function creaTimer(ms) {
-  return setTimeout(() => console.log(`Tempo scaduto: ${ms}ms`), ms);
+  return () => {
+    setTimeout(() => console.log(`Tempo scaduto: ${ms}ms`), ms);
+  };
 }
 
-creaTimer(1000);
-creaTimer(3000);
-creaTimer(5000);
-creaTimer(7000);
-creaTimer(9000);
+const create1SecondTimer = creaTimer(1000);
+create1SecondTimer();
+const create3SecondTimer = creaTimer(3000);
+create3SecondTimer();

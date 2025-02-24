@@ -9,11 +9,13 @@ Crea una funzione stampaOgniSecondo con setInterval.
 
 function stampaOgniSecondo(mex, ms) {
   let count = 0;
-  return setInterval(() => {
-    count++;
-    console.log(`${mex}: ${count}`);
-  }, ms);
+  return () => {
+    setInterval(() => {
+      count++;
+      console.log(`${mex}: ${count}`);
+    }, ms);
+  };
 }
 
-stampaOgniSecondo("Stampa 1 secondo", 1000);
-stampaOgniSecondo("Stampa 5 secondi", 5000);
+const executeEvery1Second = stampaOgniSecondo("Stampa 1 secondo", 1000);
+executeEvery1Second();

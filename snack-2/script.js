@@ -7,6 +7,6 @@ Crea una arrow function che calcola il quadrato di un numero.
  */
 const numero = 6;
 
-const quadrato = (num) => num * num;
+const quadrato = (num) => num ** 2;
 
 console.log(`${numero} * ${numero} = ${quadrato(numero)}`);
